@@ -4,7 +4,7 @@ sudo chgrp vscode /workspaces/app/.venv
 sudo chown vscode /workspaces/app/.venv
 
 sudo apt-get update
-sudo apt-get install ffmpeg libsm6 libxext6 -y
+sudo apt-get install vim -y
 
 python3 -m venv /workspaces/app/.venv
 PATH="/workspaces/app/.venv/bin:$PATH"
