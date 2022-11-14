@@ -1,6 +1,22 @@
-python3 -m venv .venv
-mkdir -p /home/vscode/.local/lib/python3.9/
-ln -s ./.venv/lib/python3.9/site-packages/ /home/vscode/.local/lib/python3.9/site-packages
-source .venv/bin/activate
-python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
+#!/bin/bash
+
+sudo chgrp vscode /workspaces/app/.venv
+sudo chown vscode /workspaces/app/.venv
+
+sudo apt-get update
+sudo apt-get install ffmpeg libsm6 libxext6 -y
+
+python3 -m venv /workspaces/app/.venv
+PATH="/workspaces/app/.venv/bin:$PATH"
+
+source /workspaces/app/.venv/bin/activate
+pip install --upgrade pip
+# pip install keyring artifacts-keyring
+
+# cat <<EOF >> /workspaces/app/.venv/pip.conf
+# [global]
+# extra-index-url=https://pkgs.dev.azure.com/...
+# EOF
+
+pip install -r /workspaces/app/requirements-dev.txt
+pip install -r /workspaces/app/requirements.txt
