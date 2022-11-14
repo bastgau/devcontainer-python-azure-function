@@ -3,6 +3,9 @@
 sudo chgrp vscode /workspaces/app/.venv
 sudo chown vscode /workspaces/app/.venv
 
+git config --global --add safe.directory ${containerWorkspaceFolder}
+git config core.autocrlf true
+
 sudo apt-get update
 sudo apt-get install vim -y
 
