@@ -1,4 +1,0 @@
-if [[ ! -f "/workspace/app/.venv" ]]
-then
-	echo "nok"
-fi

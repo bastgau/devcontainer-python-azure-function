@@ -133,3 +133,7 @@ __blobstorage__
 __queuestorage__
 __azurite_db*__.json
 .python_packages
+
+# macOS operating system file
+.DS_Store
+._DS_Store
