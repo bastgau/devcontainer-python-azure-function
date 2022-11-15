@@ -3,7 +3,7 @@
 sudo chgrp vscode /workspaces/app/.venv
 sudo chown vscode /workspaces/app/.venv
 
-git config --global --add safe.directory ${containerWorkspaceFolder}
+git config --global --add safe.directory /workspaces/app/
 git config --global core.autocrlf true
 
 sudo apt-get update
