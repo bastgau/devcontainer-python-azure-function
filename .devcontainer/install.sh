@@ -3,17 +3,16 @@
 sudo chgrp vscode /workspaces/app/.venv
 sudo chown vscode /workspaces/app/.venv
 
-git config --global --add safe.directory /workspaces/app/
-git config --global core.autocrlf true
-
-sudo apt-get update
-sudo apt-get install vim -y
+git config --global --add safe.directory /workspaces/app
+git config --global core.eol lf
+git config --global core.autocrlf false
 
 python3 -m venv /workspaces/app/.venv
 PATH="/workspaces/app/.venv/bin:$PATH"
 
 source /workspaces/app/.venv/bin/activate
 pip install --upgrade pip
+
 # pip install keyring artifacts-keyring
 
 # cat <<EOF >> /workspaces/app/.venv/pip.conf
